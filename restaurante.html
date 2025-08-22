@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Restaurante</title>
    <style>
         body {
@@ -13,21 +14,24 @@
             height: 30vh;
             margin: 0;
         }
-
         h1 {
             font-family: Arial, sans-serif;
             margin-bottom: 20px;
+            text-align: center;
         }
-
         form {
             font-size: 20px;
             text-align: left; 
         }
-
         input {
             width: 250px;
             height: 25px;
             font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            input {
+                width: 200px;
+            }
         }
     </style>
 </head>
@@ -36,7 +40,6 @@
     <form> 
         <label>Usuario</label>
         <input type="text" />
-       
     </form>
 </body>
 </html>
