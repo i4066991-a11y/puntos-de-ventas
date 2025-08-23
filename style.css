@@ -61,7 +61,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
   left: 0;
@@ -132,4 +132,3 @@ h1 {
     padding: 8px 16px;
   }
 }
-

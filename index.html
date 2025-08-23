@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Puntos de Ventas</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>PUNTOS DE VENTAS</h1>
@@ -12,39 +12,30 @@
   <div class="container">
     <div class="pos" onclick="openLogin('Restaurante')">
       <div class="overlay-text">01 - RESTAURANTE (Abierto)</div>
-      <img src="restaurante_foto.jpg" alt="Restaurante">
+      <img src="restaurante_foto.jpg" alt="Restaurante" />
     </div>
 
     <div class="pos" onclick="openLogin('Ranchitos')">
       <div class="overlay-text">02 - RANCHITOS (Abierto)</div>
-      <img src="ranchito_foto.jpg" alt="Ranchitos">
+      <img src="ranchito_foto.jpg" alt="Ranchitos" />
     </div>
 
     <div class="pos terraza" onclick="openLogin('Terraza')">
       <div class="overlay-text">03 - RANCHON (Abierto)</div>
-      <img src="terraza_foto.jpg" alt="Terraza">
+      <img src="terraza_foto.jpg" alt="Terraza" />
     </div>
   </div>
 
   <!-- Pantalla de clave -->
   <div class="login-screen" id="loginScreen">
     <h2 id="loginTitle">Ingrese su Clave</h2>
-    <input type="password" placeholder="Clave de Salonero">
+    <input type="password" id="claveInput" placeholder="Clave de Salonero" />
     <div class="btns">
       <button onclick="closeLogin()">Cancelar</button>
-      <button>Aceptar</button>
+      <button onclick="aceptarClave()">Aceptar</button>
     </div>
   </div>
 
-  <script>
-    function openLogin(title) {
-      document.getElementById("loginTitle").innerText = "Ingrese su Clave - " + title;
-      document.getElementById("loginScreen").style.display = "flex";
-    }
-
-    function closeLogin() {
-      document.getElementById("loginScreen").style.display = "none";
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

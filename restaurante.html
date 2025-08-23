@@ -1,45 +1,154 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Restaurante</title>
-   <style>
-        body {
-            background-color: #00ffff; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 30vh;
-            margin: 0;
-        }
-        h1 {
-            font-family: Arial, sans-serif;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        form {
-            font-size: 20px;
-            text-align: left; 
-        }
-        input {
-            width: 250px;
-            height: 25px;
-            font-size: 16px;
-        }
-        @media (max-width: 768px) {
-            input {
-                width: 200px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matriz de imágenes numeradas Responsive</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #00ffff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .matriz {
+      display: grid;
+      grid-template-columns: repeat(5, 120px);
+      grid-auto-rows: 140px;
+      gap: 15px;
+      justify-content: center;
+      align-content: center;
+      max-width: 100%;
+    }
+
+    .item {
+      position: relative;
+      width: 120px;
+      height: 140px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: default;
+    }
+
+    .item img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .numero {
+      margin-top: 8px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .matriz {
+        grid-template-columns: repeat(4, 100px);
+        grid-auto-rows: 120px;
+        gap: 12px;
+      }
+
+      .item {
+        width: 100px;
+        height: 120px;
+      }
+
+      .item img {
+        width: 65px;
+        height: 65px;
+      }
+
+      .numero {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .matriz {
+        grid-template-columns: repeat(3, 90px);
+        grid-auto-rows: 110px;
+        gap: 10px;
+      }
+
+      .item {
+        width: 90px;
+        height: 110px;
+      }
+
+      .item img {
+        width: 55px;
+        height: 55px;
+      }
+
+      .numero {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .matriz {
+        grid-template-columns: repeat(2, 80px);
+        grid-auto-rows: 100px;
+        gap: 8px;
+      }
+
+      .item {
+        width: 80px;
+        height: 100px;
+      }
+
+      .item img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .numero {
+        font-size: 12px;
+      }
+    }
+
+  </style>
 </head>
 <body>
-    <h1 id="titulo">Ingrese su contraseña</h1>
-    <form> 
-        <label>Usuario</label>
-        <input type="text" />
-    </form>
+
+  <div class="matriz" id="matriz"></div>
+
+  <script>
+    const matriz = document.getElementById('matriz');
+
+    for (let i = 1; i <= 20; i++) {
+      const item = document.createElement('div');
+      item.classList.add('item');
+
+      const img = document.createElement('img');
+       img.src = 'logoOcupada.avif';
+      img.alt = `Logo ocupada ${i}`;
+
+      const numero = document.createElement('div');
+      numero.classList.add('numero');
+      numero.textContent = i;
+
+      item.appendChild(img);
+      item.appendChild(numero);
+
+      matriz.appendChild(item);
+    }
+  </script>
+
 </body>
 </html>
