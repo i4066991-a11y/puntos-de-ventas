@@ -1,54 +1,52 @@
+/* Fondo de la página */
+body {
+    background-color: aqua;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
 /* Título principal */
 #titulo {
     text-align: center;
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
+    margin: 20px 0;
 }
 
 /* Contenedor de imágenes */
 #contenedor {
-    display: flex;         
-    gap: 20px;             
+    display: flex; /* Poner las imágenes en fila */
+    gap: 20px; /* Espacio entre ellas */
     justify-content: center;
+    flex-wrap: wrap; /* Permite que se muevan a la siguiente fila si no caben */
     margin-bottom: 20px;
-    flex-wrap: wrap; /* permite que se acomoden en varias filas si no caben */
 }
 
 /* Bloques de imágenes */
-#fondo, #ranchitos, #ranchon {
+#fondo,
+#ranchitos,
+#ranchon {
     width: 300px;
     height: 300px;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    border-radius: 10px;    
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3); 
-    cursor: pointer;        
-    transition: transform 0.2s ease; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-#fondo:hover, #ranchitos:hover, #ranchon:hover {
-    transform: scale(1.05); 
+/* Efecto hover */
+#fondo:hover,
+#ranchitos:hover,
+#ranchon:hover {
+    transform: scale(1.05);
 }
 
-/* Imagenes individuales */
-#fondo {
-    background-image: url('restaurante.jpg');
-    background-position: center center;
-     margin: 0 auto;
-}
-
-#ranchitos {
-    background-image: url('ranchitos.jpg');
-    background-position: center center;
-     margin: 0 auto;
-}
-
-#ranchon {
-    background-image: url('ranchon.jpg');
-    background-position: center center;
-     margin: 0 auto;
-}
+/* Imágenes específicas */
+#fondo { background-image: url('restaurante.jpg'); background-position: center center; }
+#ranchitos { background-image: url('ranchitos.jpg'); background-position: center center; }
+#ranchon { background-image: url('ranchon.jpg'); background-position: center center; }
 
 /* Texto sobre imágenes */
 .texto-imagen {
@@ -58,32 +56,30 @@
     transform: translateX(-50%);
     color: white;
     font-size: 20px;
-    font-family: Arial, sans-serif;
     font-weight: bold;
-    text-shadow: 2px 2px 4px black; 
+    text-shadow: 2px 2px 4px black;
 }
 
-/* Para quitar estilos de los enlaces */
+/* Quitar estilos de los enlaces */
 .link-imagen {
     text-decoration: none;
     color: inherit;
 }
 
-/* --- Responsive --- */
+/* --- Responsive para móviles --- */
 @media (max-width: 768px) {
     #contenedor {
         flex-direction: column;
         align-items: center;
     }
-
-    #fondo, #ranchitos, #ranchon {
+    #fondo,
+    #ranchitos,
+    #ranchon {
         width: 90%;
         height: 200px;
-        margin-bottom: 20px; /* espacio entre imágenes verticales */
+        margin-bottom: 20px; /* Espacio entre imágenes */
     }
-
     .texto-imagen {
         font-size: 18px;
     }
 }
-
