@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puntos de Ventas</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puntos de Ventas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <h1 id="titulo">Puntos de Ventas</h1>
+  <h1>PUNTOS DE VENTAS</h1>
 
-    <div id="contenedor">
-        <a href="restaurante_foto.JPG" class="link-imagen">
-            <div id="fondo">
-                <span class="texto-imagen">Restaurante</span>
-            </div>
-        </a>
-
-        <a href="ranchitos_foto.JPG" class="link-imagen">
-            <div id="ranchitos">
-                <span class="texto-imagen">Ranchitos</span>
-            </div>
-        </a>
-
-        <a href="terraza_foto.JPG" class="link-imagen">
-            <div id="ranchon">
-                <span class="texto-imagen">Terraza</span>
-            </div>
-        </a>
+  <div class="container">
+    <div class="pos" onclick="openLogin('Restaurante')">
+      <div class="overlay-text">01 - RESTAURANTE (Abierto)</div>
+      <img src="restaurante_foto.jpg" alt="Restaurante">
     </div>
 
+    <div class="pos" onclick="openLogin('Ranchitos')">
+      <div class="overlay-text">02 - RANCHITOS (Abierto)</div>
+      <img src="ranchito_foto.jpg" alt="Ranchitos">
+    </div>
+
+    <div class="pos terraza" onclick="openLogin('Terraza')">
+      <div class="overlay-text">03 - RANCHON (Abierto)</div>
+      <img src="terraza_foto.jpg" alt="Terraza">
+    </div>
+  </div>
+
+  <!-- Pantalla de clave -->
+  <div class="login-screen" id="loginScreen">
+    <h2 id="loginTitle">Ingrese su Clave</h2>
+    <input type="password" placeholder="Clave de Salonero">
+    <div class="btns">
+      <button onclick="closeLogin()">Cancelar</button>
+      <button>Aceptar</button>
+    </div>
+  </div>
+
+  <script>
+    function openLogin(title) {
+      document.getElementById("loginTitle").innerText = "Ingrese su Clave - " + title;
+      document.getElementById("loginScreen").style.display = "flex";
+    }
+
+    function closeLogin() {
+      document.getElementById("loginScreen").style.display = "none";
+    }
+  </script>
 </body>
 </html>
