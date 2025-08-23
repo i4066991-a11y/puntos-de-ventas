@@ -44,9 +44,9 @@ body {
 }
 
 /* Imágenes específicas */
-#fondo { background-image: url('restaurante.jpg'); background-position: center center; }
-#ranchitos { background-image: url('ranchitos.jpg'); background-position: center center; }
-#ranchon { background-image: url('ranchon.jpg'); background-position: center center; }
+#fondo { background-image: url('restaurante_foto.jpg'); background-position: center center; }
+#ranchitos { background-image: url('ranchitos_foto.jpg'); background-position: center center; }
+#ranchon { background-image: url('terraza_foto.jpg'); background-position: center center; }
 
 /* Texto sobre imágenes */
 .texto-imagen {
